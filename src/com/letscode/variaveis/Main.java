@@ -1,6 +1,9 @@
 package com.letscode.variaveis;
 
 import com.letscode.variaveis.enums.TipoVinculoProfessor;
+import com.letscode.variaveis.service.Calculadora;
+import com.letscode.variaveis.utils.Impressora;
+import com.letscode.variaveis.utils.Leitor;
 
 import java.util.Scanner;
 
@@ -10,8 +13,8 @@ public class Main {
 
         // Variáveis para armazenar texto / caracteres
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Insira o nome do professor: ");
-        String nomeProfessor = scanner.nextLine();
+
+        String nomeProfessor = Leitor.escanearNomeProfessor();
 
         char inicialNomeProfessor = nomeProfessor.charAt(0);
 
@@ -43,21 +46,18 @@ public class Main {
         System.out.println("O vínculo do professor é " + tipoVinculoProfessor.toString().replace('_', ' '));
         System.out.println("O professor é auxiliar? " + isProfessorAuxiliar);
 
-        final float VALOR_MINIMO_HORA_AULA = 45f;
-
         float fatorCalculoBonusProfessor = 0.1f;
 
         // + - * /
-        float bonusProfessor = salarioProfessor * fatorCalculoBonusProfessor;
-
-        // salarioProfessor = salarioProfessor + bonusProfessor;
-        // salarioProfessor += bonusProfessor;
+        float bonusProfessor = Calculadora.calculaBonusProfessor(salarioProfessor, fatorCalculoBonusProfessor);
 
         System.out.printf("O nome do professor é %s. O bônus do professor é %.2f. " +
                 "O salário atualizado é %.2f %n", nomeProfessor, bonusProfessor, (salarioProfessor += bonusProfessor));
 
+        Calculadora calculadora = new Calculadora();
+
         System.out.printf("Para ganhar o salário, o professor trabalhou por %.2f horas",
-                (salarioProfessor / VALOR_MINIMO_HORA_AULA));
+                calculadora.calcularHorasTrabalhadas(salarioProfessor));
 
         // Equivale ao %n quando utilizamos a quebra de linha como argumento do printf
         System.out.print("\n");
@@ -65,6 +65,8 @@ public class Main {
         // salarioProfessor++ salarioProfessor--
         // ++salarioProfessor;
         System.out.println("Salário professor +1 -> " + ++salarioProfessor);
+
+
     }
 
 }

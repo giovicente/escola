@@ -45,6 +45,8 @@ public class Leitor {
     }
 
     public static void fecharScanner() {
+
+        System.out.println("Fechando o scanner");
         scanProfessor.close();
     }
 }

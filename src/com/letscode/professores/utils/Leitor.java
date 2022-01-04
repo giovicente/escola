@@ -6,47 +6,51 @@ import java.util.Scanner;
 
 public class Leitor {
 
-    private static Scanner scanProfessor = new Scanner(System.in);
+    private static Scanner scanEscola = new Scanner(System.in);
 
     public static String escanearNomeProfessor() {
         Impressora.imprimirMsgInsercaoNomeProfessor();
-        String nomeProfessor = scanProfessor.nextLine();
+        String nomeProfessor = scanEscola.nextLine();
         return nomeProfessor;
     }
 
     public static int escanearIdadeProfessor() {
         Impressora.imprimirMsgInsercaoIdadeProfessor();
-        return scanProfessor.nextInt();
+        return scanEscola.nextInt();
     }
 
     public static long escanearNumeroCadastroProfessor() {
         Impressora.imprimirMsgInsercaoNumeroCadastroProfessor();
-        return scanProfessor.nextLong();
+        return scanEscola.nextLong();
     }
 
     public static float escanearSalarioProfessor() {
         Impressora.imprimirMsgInsercaoSalarioProfessor();
-        return scanProfessor.nextFloat();
+        return scanEscola.nextFloat();
     }
 
     public static boolean escanearRespostaProfessorAuxiliar() {
         Impressora.imprimirMsgRespostaProfessorAuxiliar();
-        return scanProfessor.nextBoolean();
+        return scanEscola.nextBoolean();
     }
 
     public static TipoVinculoProfessor escanearTipoVinculo() {
         Impressora.imprimirMsgInsercaoTipoVinculo();
-        return TipoVinculoProfessor.valueOf(scanProfessor.next());
+        return TipoVinculoProfessor.valueOf(scanEscola.next());
     }
 
     public static float escanearValorHoraProfessor() {
         System.out.print("Digite o valor / hora professor(a): ");
-        return scanProfessor.nextFloat();
+        return scanEscola.nextFloat();
+    }
+
+    public static String escanearNomeDisciplina(int i) {
+        Impressora.imprimirMsgInsercaoDisciplina(i);
+        return scanEscola.next();
     }
 
     public static void fecharScanner() {
-
         System.out.println("Fechando o scanner");
-        scanProfessor.close();
+        scanEscola.close();
     }
 }

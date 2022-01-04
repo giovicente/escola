@@ -13,23 +13,6 @@ public class Main {
 
         Scanner scanOpcao = new Scanner(System.in);
 
-
-        // tamanho do array == N; numero de índices == N-1
-        // length == 4 indexes == 3
-        //String[] disciplinas = {"POO", "Spring", "Algoritmos", "TDD"};
-        String[] disciplinas = new String[4];
-
-        System.out.println("Digite as disciplinas.");
-        for (int i = 0; i < disciplinas.length; i++) {
-            disciplinas[i] = scanOpcao.next();
-        }
-
-        for (int i = disciplinas.length - 1; i >= 0; i--) {
-            System.out.println(disciplinas[i]);
-        }
-
-        int[] notas = {10, 10, 10};
-
         int opcao = 0;
         String nomeAuxiliar = "";
         String indicadorContinuidade = "";
@@ -56,7 +39,10 @@ public class Main {
 
             System.out.println("Operação realizada. Digite [S] para realizar uma nova operação. " +
                     "Digite qualquer outra tecla para sair.");
+
+            // mais um item para o diff
             indicadorContinuidade = scanOpcao.next();
+
         } while (indicadorContinuidade.equalsIgnoreCase("S"));
 
 

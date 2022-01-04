@@ -29,6 +29,8 @@ public class Impressora {
 
     private final static String MENSAGEM_CALCULO_HORAS_TRABALHADAS = "Para ganhar o salário, o professor trabalhou por %.2f horas.%n";
 
+    private final static String MENSAGEM_INSERCAO_NOME_DISCIPLINA = "Digite a disciplina %d: ";
+
     public static void imprimirMsgInsercaoNomeProfessor() {
         System.out.print(MENSAGEM_INSERCAO_NOME_PROFESSOR);
     }
@@ -87,6 +89,10 @@ public class Impressora {
 
     public static void imprimirMensagemCalculoHoras(float horasTrabalhadas) {
         System.out.printf(MENSAGEM_CALCULO_HORAS_TRABALHADAS, horasTrabalhadas);
+    }
+
+    public static void imprimirMsgInsercaoDisciplina(int i) {
+        System.out.printf(MENSAGEM_INSERCAO_NOME_DISCIPLINA, (i + 1));
     }
 
 }

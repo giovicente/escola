@@ -10,7 +10,6 @@ public class CadastroDisciplinas {
         // String[] disciplinas = {"POO", "Spring", "Algoritmos", "TDD"};
         String[] disciplinas = new String[4];
 
-        // mais uma linha para commit via IntelliJ
         for (int i = 0; i < disciplinas.length; i++) {
             disciplinas[i] = Leitor.escanearNomeDisciplina(i);
         }

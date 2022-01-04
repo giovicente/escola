@@ -40,7 +40,6 @@ public class Main {
             System.out.println("Operação realizada. Digite [S] para realizar uma nova operação. " +
                     "Digite qualquer outra tecla para sair.");
 
-            // mais um item para o diff
             indicadorContinuidade = scanOpcao.next();
 
         } while (indicadorContinuidade.equalsIgnoreCase("S"));
